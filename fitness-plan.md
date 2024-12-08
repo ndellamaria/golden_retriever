@@ -1,0 +1,14 @@
+| Day       | Activity        | Details                                                                                                                       | Duration/Distance | Notes                       |
+| --------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------- | --------------------------- |
+| Monday    | Swim            | Main set: 4x400 freestyle with 30s rest<br>Warm-up: 200 easy<br>Cool-down: 200 easy                                           | 2000 yards        | Focus on form and endurance |
+| Monday    | Upper Body Lift | • Bench Press: 3x8-12<br>• Rows: 3x8-12<br>• Shoulder Press: 3x8-12<br>• Lat Pulldown: 3x8-12<br>• Tricep/Bicep: 2x12-15 each | 45-60 mins        | Progressive overload        |
+| Tuesday   | Run/Walk        | 4 miles total<br>Run 5 mins, walk 1 min                                                                                       | 45-50 mins        | Low impact, listen to knee  |
+| Tuesday   | Lower Body Lift | • Bodyweight squats: 3x15<br>• Romanian deadlifts: 3x10<br>• Leg press: 3x12<br>• Calf raises: 3x15<br>• Core work            | 45-60 mins        | Focus on form               |
+| Wednesday | Swim            | Ladder: 100-200-300-400-300-200-100<br>30s rest between                                                                       | 1600 yards        | Speed intervals             |
+| Wednesday | Upper Body Lift | • Pull-ups/assisted: 3x8<br>• Incline press: 3x10<br>• Face pulls: 3x15<br>• Lateral raises: 3x12<br>• Arms super-set         | 45-60 mins        | Focus on back               |
+| Thursday  | Rest            | Light stretching or yoga                                                                                                      | 20-30 mins        | Active recovery             |
+| Friday    | Swim            | 5x400 freestyle<br>45s rest between<br>200 warm-up/cool-down                                                                  | 2200 yards        | Endurance focus             |
+| Friday    | Lower Body Lift | • Step-ups: 3x12 each<br>• Hip thrusts: 3x12<br>• Leg extensions: 3x15<br>• Standing band work<br>• Core circuit              | 45-60 mins        | Joint-friendly              |
+| Saturday  | Run/Walk        | 6 miles total<br>Run 8 mins, walk 2 mins                                                                                      | 70-80 mins        | Long session                |
+| Saturday  | Upper Body Lift | • Push-up variations: 3x12<br>• Dumbbell press: 3x10<br>• Cable rows: 3x12<br>• Rear delt flies: 3x15<br>• Arms finisher      | 45-60 mins        | Light weights               |
+| Sunday    | Active Recovery | Light swim or stretching                                                                                                      | 30 mins           | Focus on mobility           |
