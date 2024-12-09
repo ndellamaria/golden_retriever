@@ -1,6 +1,6 @@
 from langchain_community.tools.tavily_search import TavilySearchResults
 import json
-import models.content as Content
+from models.content import Content
 
 search_tool = TavilySearchResults(max_results=2)
 

@@ -1,8 +1,7 @@
-from typing import TypedDict, Literal
-
 from langgraph.graph import StateGraph, END
 from util.nodes import call_model, should_continue, tool_node
 from util.state import AgentState
+from langgraph.checkpoint.memory import MemorySaver
 
 
 workflow = StateGraph(AgentState)
@@ -18,13 +17,15 @@ workflow.add_conditional_edges(
 
 workflow.add_edge("search", "agent")
 
-graph = workflow.compile()
+memory = MemorySaver()
+
+graph = workflow.compile(checkpointer=memory)
 
 def stream_graph_updates(user_input: str):
-    for event in graph.stream({"messages": [("user", user_input)]}):
+    for event in graph.stream({"messages": [("user", user_input)]}, config={"configurable": {"thread_id": "1"}}):
         for value in event.values():
             print("Assistant:", value["messages"][-1].content)
-            
+
 while True:
     try:
         user_input = input("User: ")
