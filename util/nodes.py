@@ -3,13 +3,14 @@ from util.tools import tools
 from langgraph.prebuilt import ToolNode
 
 system_prompt = (
-    "You are a helpful assistant who is helping a user store their reading progress of any content."
-    + "It does not have to be a book. It can be an article, blog post, or any other form of content."
-    + "Please prompt the user for what they are currently reading. Then research for the author and summary."
-    + "Finally, ask the user for their progress and store the information."
+    "You are a helpful assistant who is helping a user make progress on reading content."
+    + "It does not have to be a book. It can be an article, blog post, paper pdf or any other form of content."
+    + "You want to help the user store their reading progress and store a record of what they have read."
+    + "The user may have already started a piece of content, or they may be starting a new one."
+    + "Previously started content is stored in content.json. If they have already started content, ask for their progress."
 )
 
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="gpt-4o").bind_tools(tools)
 
 
 def should_continue(state):

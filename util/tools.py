@@ -1,10 +1,9 @@
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_core.tools import tool
 import json
 from models.content import Content
+from typing import Optional
 
-search_tool = TavilySearchResults(max_results=2)
-
-
+@tool
 def save_content(content: Content):
     """Save the content object to a JSON file.
         
@@ -14,39 +13,21 @@ def save_content(content: Content):
     with open("content.json", "w") as f:
         json.dump(content.model_dump(),f,indent=4,default=str)
 
-def handle_content_response(state: AgentState) -> AgentState:
-    """Handle the response from the user about the content they are currently reading.
-        
-        Args:
-            state: The current state of the agent.
+@tool
+def read_content() -> Optional[Content]:
+    """Reads the content object from a JSON file.
         
         Returns:
-            The updated state of the agent.
+            The content information if available, None if there's nothing stored.
     """
-    last_message = state["messages"][-1]
-    if last_message.role == "user":
-        if (state["current_content"] == Content.from_dict(last_message.content)): 
-            
-        else:
-            state["current_content"] = Content.from_dict(last_message.content)
-            state["next_action"] = "ask_progress"
-    else: 
-        return state
-    
-def ask_progress(state: AgentState) -> AgentState:
-    """Prompt the user for their progress on the current content.
-        
-        Args:
-            state: The current state of the agent.
-        
-        Returns:
-            The updated state of the agent.
-    """
-    current_content = state["current_content"]["title"]
-    response = f"I found the paper {current_content} in your history!"
-    state["chat_history"].append({"role": "assistant", "content": response})
-    state["next_action"] = "update_progress"
-    return state
+    with open("content.json", "r") as f:
+        try:
+            json_str = f.read()
+            content = Content.model_validate_json(json_str)
+            return content
+        except Exception as e:
+            print(f"Error reading content from file. {e}")
+            return None
 
 # TODO: Introduce tools when complexity required. 
-# tools = [search_tool, save_content]
+tools = [save_content, read_content]

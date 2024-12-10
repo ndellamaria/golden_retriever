@@ -5,27 +5,18 @@ from langgraph.checkpoint.memory import MemorySaver
 
 
 
-def ask_what_reading(state: AgentState) -> AgentState:
-    """Initial prompt to ask the user what they are currently reading."""
-    response = "What are you currently reading?"
-    state["chat_history"].append({"role": "assistant", "content": response})
-    state["next_action"] = "validate_content"
-    return state
-
 workflow = StateGraph(AgentState)
 
-
-
 workflow.add_node("agent", call_model)
-workflow.add_node("search", tool_node)
+workflow.add_node("content_manager", tool_node)
 
 workflow.set_entry_point("agent")
 
 workflow.add_conditional_edges(
-    "agent", should_continue, {"continue": "search", "end": END}
+    "agent", should_continue, {"continue": "content_manager", "end": END}
 )
 
-workflow.add_edge("search", "agent")
+workflow.add_edge("content_manager", "agent")
 
 memory = MemorySaver()
 
