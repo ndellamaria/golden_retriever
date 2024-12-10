@@ -9,7 +9,7 @@ system_prompt = (
     + "Finally, ask the user for their progress and store the information."
 )
 
-llm = ChatOpenAI(model="gpt-4o").bind_tools(tools)
+llm = ChatOpenAI(model="gpt-4o")
 
 
 def should_continue(state):

@@ -4,7 +4,17 @@ from util.state import AgentState
 from langgraph.checkpoint.memory import MemorySaver
 
 
+
+def ask_what_reading(state: AgentState) -> AgentState:
+    """Initial prompt to ask the user what they are currently reading."""
+    response = "What are you currently reading?"
+    state["chat_history"].append({"role": "assistant", "content": response})
+    state["next_action"] = "validate_content"
+    return state
+
 workflow = StateGraph(AgentState)
+
+
 
 workflow.add_node("agent", call_model)
 workflow.add_node("search", tool_node)
