@@ -2,6 +2,7 @@ from langchain_core.tools import tool
 import json
 from models.content import Content
 from typing import Optional
+from langchain.agents import load_tools
 
 @tool
 def save_content(content: Content):
@@ -29,5 +30,6 @@ def read_content() -> Optional[Content]:
             print(f"Error reading content from file. {e}")
             return None
 
-# TODO: Introduce tools when complexity required. 
-tools = [save_content, read_content]
+arxiv = load_tools(["arxiv"])
+
+tools = [save_content, read_content] + arxiv
