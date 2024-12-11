@@ -1,5 +1,14 @@
-{
-    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
-    "started": "2024-12-10 20:22:32.464113",
-    "progress": 0
-}
+[
+    {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "started": "2024-12-10 20:22:32.464113",
+        "finished": "2024-12-11 11:28:32.412373",
+        "progress": 100
+    },
+    {
+        "title": "Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models",
+        "started": "2024-12-10 22:21:16.023583",
+        "finished": null,
+        "progress": 0
+    }
+]
