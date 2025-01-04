@@ -52,6 +52,6 @@ function createPaperElement(paper) {
 document.addEventListener('DOMContentLoaded', () => {
     loadReadingList();
     // Refresh every 30 seconds
-    setInterval(loadReadingList, 30000);
+    setInterval(loadReadingList, 300);
 });
 export {};

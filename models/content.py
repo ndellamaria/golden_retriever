@@ -7,4 +7,5 @@ class Content(BaseModel):
     started: datetime = Field(default_factory=datetime.now)
     finished: Optional[datetime] = None
     progress: int = Field(..., ge=0, le=100)
+    summary: Optional[str] = None
 

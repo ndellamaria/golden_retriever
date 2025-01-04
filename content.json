@@ -3,12 +3,21 @@
         "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
         "started": "2024-12-10 20:22:32.464113",
         "finished": "2024-12-11 11:28:32.412373",
-        "progress": 100
+        "progress": 100,
+        "summary": ""
     },
     {
         "title": "Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models",
-        "started": "2024-12-11 11:57:31.167137",
-        "finished": "2023-12-11 11:28:32",
-        "progress": 100
+        "started": "2024-12-21 15:10:29.708727",
+        "finished": null,
+        "progress": 95,
+        "summary": ""
+    },
+    {
+        "title": "Podcast Script: Sycophancy to Subterfuge",
+        "started": "2025-01-04 15:45:31.819536",
+        "finished": null,
+        "progress": 100,
+        "summary": "The podcast delves into the phenomenon of sycophancy in large language models, discussing its causes, impacts, and mitigation strategies. Featuring an interview with Dr. Emily Carter, the discussion includes practical applications and related research, emphasizing the importance of addressing sycophancy for ethical AI development."
     }
 ]

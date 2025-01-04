@@ -31,7 +31,7 @@ def save_content(content: List[Content]) -> str:
         content_dicts = [c.model_dump() for c in content]
         json.dump(content_dicts,f,indent=4,default=str)
 
-@tool(return_direct=False)
+@tool
 def add_content(content: Content) -> str:
     """Add a new content object to the content.json file.
         
@@ -46,7 +46,7 @@ def add_content(content: Content) -> str:
     except Exception as e:
         print(f"Error adding content to file. {e}")
 
-@tool(return_direct=False)
+@tool
 def update_content(content: Content) -> str:
     """Update the content object in the content.json file.
         
@@ -64,6 +64,53 @@ def update_content(content: Content) -> str:
     except Exception as e:
         print(f"Error updating content in file. {e}")
 
+
+@tool 
+def save_script(script: str, content: Content) -> str:
+    """Save the podcast script to a text file.
+        
+        Args:
+            script: The podcast script to be saved.
+    """
+    try:
+        filename = content.title.replace(" ", "_") + "_script.txt"
+        with open(f'resources/scripts/{filename}', "w") as f:
+            f.write(script)
+    except Exception as e:
+        print(f"Error saving podcast script. {e}")
+
+# @tool
+# async def create_podcast_script(content: Content) -> str:
+#     """Create an engaging 45min podcast script with 2 speakers, an interviewer and a subject matter expert 
+#         from the content object. Feel free to use arxiv to look up additional details about the subject matter.
+        
+#         Args:
+#             content: The content information saved in a Contact object.
+#     """
+#     try:
+#         podcast_prompt = f"""
+#         Create an in-depth podcast script based on:
+#         Title: {content.title}
+#         Summary: {content.summary}
+#         Content: {content.content}
+        
+#         Include:
+#         1. Detailed analysis'
+#         2. Related research/context
+#         3. Practical implications
+#         """
+        
+#         # Generate podcast script
+#         response = await openai.ChatCompletion.acreate(
+#             model="gpt-4",
+#             messages=[{"role": "user", "content": podcast_prompt}]
+#         )
+
+#         return response["choices"][0]["message"]["content"]
+    
+#     except Exception as e:
+#         print(f"Error creating podcast script. {e}")
+
 arxiv = load_tools(["arxiv"])
 
-tools = [load_content, add_content, update_content] + arxiv
+tools = [load_content, add_content, update_content, save_script] + arxiv

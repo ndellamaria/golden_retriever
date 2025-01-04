@@ -2,3 +2,4 @@ langgraph
 tavily-python
 langchain_community
 langchain_openai
+arxiv
