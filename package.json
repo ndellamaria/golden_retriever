@@ -1,0 +1,16 @@
+{
+  "name": "golden-retriever",
+  "private": true,
+  "workspaces": [
+    "shared-types",
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build:types": "cd shared-types && npm run build",
+    "dev": "npm run build:types && concurrently \"cd server && npm run dev\" \"cd client && npm start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
