@@ -1,4 +1,4 @@
-import { Content } from './types';
+import { Content } from '../../../shared-types/types/types';
 
 async function loadReadingList(): Promise<void> {
     try {
