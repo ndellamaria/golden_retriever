@@ -11,13 +11,23 @@ function App() {
   }, []);
 
   return (
-    <div className="p-8">
-      <div className="flex items-start">
+    <div className="bg-stone-100 p-10 min-h-screen">
+      <div className="flex items-center justify-center">
         <div className='pr-16'>
-          <h1 className="text-6xl font-bold" style={{ fontFamily: 'Istok Web' }}>Explain it to a Golden Retriever</h1>
-          <img src='/src/assets/icons/info.svg' alt="info" className="!w-10 !h-10" ></img>
+          <h1 className="text-5xl font-bold" style={{ fontFamily: 'Istok Web' }}>Explain it to a Golden Retriever</h1>
         </div>
-        <img src='/src/assets/images/whos-a-goood-girl.jpeg' alt="Who's a goood girl?" className="w-1/6"></img>
+        <img src='/src/assets/images/whos-a-goood-girl.png' alt="Who's a goood girl?" className="w-36"></img>
+      </div>
+      <div className='flex items-center'>
+        <div className='group flex items-center cursor-pointer'>
+          <img src='/src/assets/icons/info.svg' alt="info" className="p-4" ></img>
+          <div className="overflow-hidden">
+            <span className="inline-block transform translate-x-[-110%] group-hover:translate-x-0 transition-transform duration-300 ml-2">
+              <p className='font-istok'>This is a personal project I made to help me track self-learning content. The name is inspired by an HBS FIN1 professor who asked us to explain things like Sharpe Ratios to
+                a golden retriever &#128522; It is build using React, Typescript, Tailwind CSS.</p>
+            </span>
+          </div>
+        </div>
       </div>
       <ContentList />
     </div >
