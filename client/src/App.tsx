@@ -11,8 +11,8 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Frontend is running!</h1>
+    <div className="p-8">
+      <h1 className="text-4xl font-istok">Explain it to a Golden Retriever</h1>
       <ContentList />
     </div>
   );
@@ -48,7 +48,7 @@ const ContentList = () => {
 
   return (
     <div>
-      {contentList.map((content, i) => (
+      {contentList.map((content,) => (
         <ContentRow key={content.id} content={content} />
       ))}
     </div>
@@ -60,8 +60,8 @@ function ContentRow({ content }: { content: Content | null }) {
 
   return (
     <div>
-      <p>{content.title} </p>
-      <p>Started: {new Date(content.started).toLocaleDateString()} | Status: {content.progress === 100 ? 'Completed' : 'In Progress'}</p>
+      <p className="text-lg font-istok">{content.title} </p>
+      <p className="text-sm font-istok">Started: {new Date(content.started).toLocaleDateString()} | Status: {content.progress === 100 ? 'Completed' : 'In Progress'}</p>
     </div>
   );
 }
