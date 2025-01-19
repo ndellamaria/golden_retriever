@@ -12,9 +12,15 @@ function App() {
 
   return (
     <div className="p-8">
-      <h1 className="text-4xl font-istok">Explain it to a Golden Retriever</h1>
+      <div className="flex items-start">
+        <div className='pr-16'>
+          <h1 className="text-6xl font-bold" style={{ fontFamily: 'Istok Web' }}>Explain it to a Golden Retriever</h1>
+          <img src='/src/assets/icons/info.svg' alt="info" className="!w-10 !h-10" ></img>
+        </div>
+        <img src='/src/assets/images/whos-a-goood-girl.jpeg' alt="Who's a goood girl?" className="w-1/6"></img>
+      </div>
       <ContentList />
-    </div>
+    </div >
   );
 }
 
@@ -59,8 +65,8 @@ function ContentRow({ content }: { content: Content | null }) {
   if (!content) return null;
 
   return (
-    <div>
-      <p className="text-lg font-istok">{content.title} </p>
+    <div className="p-2">
+      <p className="text-lg font-bold" style={{ fontFamily: 'Istok Web' }}>{content.title} </p>
       <p className="text-sm font-istok">Started: {new Date(content.started).toLocaleDateString()} | Status: {content.progress === 100 ? 'Completed' : 'In Progress'}</p>
     </div>
   );
