@@ -3,6 +3,7 @@ node_modules/
 .DS_Store
 models/__pycache__/
 util/__pycache__/
+**/.env*
 
 # Logs
 logs

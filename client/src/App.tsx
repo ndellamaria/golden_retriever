@@ -77,7 +77,7 @@ function ContentRow({ content }: { content: Content | null }) {
   return (
     <div className="p-2">
       <p className="text-lg font-bold" style={{ fontFamily: 'Istok Web' }}>{content.title} </p>
-      <p className="text-sm font-istok">Started: {new Date(content.started).toLocaleDateString()} | Status: {content.progress === 100 ? 'Completed' : 'In Progress'}</p>
+      <p className="text-sm font-istok">Started: {new Date(content.started).toLocaleDateString()} | Progress: {content.progress}%</p>
     </div>
   );
 }

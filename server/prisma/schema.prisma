@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Content {
+  id          String      @id @default(cuid())
+  title       String
+  type        ContentType
+  authors     String[]    // Array of author names
+  description String?     @db.Text
+  fileUrl     String?     // For PDFs or other uploaded files
+  startedAt   DateTime
+  finishedAt  DateTime?
+  progress    Float       @default(0) // Percentage from 0 to 100
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  status      ContentStatus @default(IN_PROGRESS)
+}
+
+enum ContentType {
+  BLOG
+  RESEARCH_PAPER
+  PDF
+  BOOK
+}
+
+enum ContentStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  ON_HOLD
+  BACKLOG
+}
