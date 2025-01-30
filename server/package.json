@@ -10,13 +10,18 @@
         "test": "jest"
     },
     "dependencies": {
+        "@langchain/community": "^0.3.28",
+        "@langchain/core": "^0.3.36",
+        "@langchain/openai": "^0.4.2",
         "@prisma/client": "^6.2.1",
         "@types/pg": "^8.11.10",
         "@your-project/shared-types": "file:../shared-types",
+        "axios": "^1.7.9",
         "cors": "^2.8.5",
         "dotenv": "^16.3.1",
         "express": "^4.18.2",
         "helmet": "^7.1.0",
+        "langchain": "^0.3.15",
         "pg": "^8.13.1"
     },
     "devDependencies": {

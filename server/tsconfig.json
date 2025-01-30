@@ -10,11 +10,14 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "sourceMap": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "paths": {
+            "@shared-types/*": ["../shared-types/dist/*"]
+        }
     },
     "include": [
-        "src/**/*",
-        "../shared-types/types/types.ts"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",

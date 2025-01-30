@@ -79,9 +79,26 @@ async function deleteContent(id: string) {
   }
 }
 
+// Find content by title (using fuzzy match)
+async function findContentByTitle(title: string) {
+  const allContent = await prisma.content.findMany();
+
+  // Convert titles to lowercase for comparison
+  const searchTitle = title.toLowerCase();
+
+  // Find the best match using simple string inclusion
+  const bestMatch = allContent.find(content =>
+    content.title.toLowerCase().includes(searchTitle) ||
+    searchTitle.includes(content.title.toLowerCase())
+  );
+
+  return bestMatch || null;
+}
+
 export {
   createContent,
   getContentById,
   updateContent,
   deleteContent,
+  findContentByTitle,
 };
